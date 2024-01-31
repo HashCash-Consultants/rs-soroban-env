@@ -253,7 +253,7 @@ impl Host {
                     .extend_ttl(self, key, threshold, extend_to)
                     .map_err(|e| self.decorate_contract_code_storage_error(e, &wasm_hash))?;
             }
-            ContractExecutable::StellarAsset => {}
+            ContractExecutable::HcnetAsset => {}
         }
         Ok(())
     }
@@ -356,7 +356,7 @@ impl Host {
             for signer in signers {
                 if let SignerKey::Ed25519(ref this_signer) = signer.key {
                     if &target_signer == this_signer {
-                        // Clamp the weight at 255. Stellar protocol before v10
+                        // Clamp the weight at 255. Hcnet protocol before v10
                         // allowed weights to exceed 255, but the max threshold
                         // is 255, hence there is no point in having a larger
                         // weight.

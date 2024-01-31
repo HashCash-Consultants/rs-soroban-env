@@ -376,7 +376,7 @@ where
 
     fn try_from_val(env: &E, val: &Val) -> Result<Self, ConversionError> {
         if let Ok(object) = Object::try_from(val) {
-            // Bug https://github.com/stellar/rs-soroban-env/issues/1076: it's
+            // Bug https://github.com/hcnet/rs-soroban-env/issues/1076: it's
             // not really great to be dropping the error from the other
             // TryFromVal here, we should really switch to taking errors from E
             // or returning Error or something.

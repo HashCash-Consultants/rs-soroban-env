@@ -94,9 +94,9 @@ fn display_scval(scv: &ScVal, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Resu
             write!(f, "ContractInstance(Wasm({}))", hash)
         }
         ScVal::ContractInstance(ScContractInstance {
-            executable: ContractExecutable::StellarAsset,
+            executable: ContractExecutable::HcnetAsset,
             ..
-        }) => write!(f, "ContractInstance(StellarAsset)"),
+        }) => write!(f, "ContractInstance(HcnetAsset)"),
     }
 }
 

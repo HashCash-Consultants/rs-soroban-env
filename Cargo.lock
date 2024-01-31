@@ -572,6 +572,45 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f93e7192158dbcda357bdec5fb5788eebf8bbac027f3f33e719d29135ae84156"
 
 [[package]]
+name = "hcnet-strkey"
+version = "0.0.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f9ccacb9060c0b026017c9b2267ddb5f67d6566f7221be05fe2ec732be89f360"
+dependencies = [
+ "base32",
+ "crate-git-revision",
+ "thiserror",
+]
+
+[[package]]
+name = "hcnet-xdr"
+version = "20.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a73c8d798dae14cee8d6c5dec8d6252992f3b913b68806366ef030706b6b4f9e"
+dependencies = [
+ "arbitrary",
+ "crate-git-revision",
+ "escape-bytes",
+ "hcnet-strkey",
+ "hex",
+]
+
+[[package]]
+name = "hcnet-xdr"
+version = "20.0.3"
+source = "git+https://github.com/HashCash-Consultants/rs-hcnet-xdr?rev=bc19f448db1bb6466b83976a89c0472587166582#bc19f448db1bb6466b83976a89c0472587166582"
+dependencies = [
+ "arbitrary",
+ "base64 0.13.1",
+ "crate-git-revision",
+ "escape-bytes",
+ "hcnet-strkey",
+ "hex",
+ "serde",
+ "serde_with",
+]
+
+[[package]]
 name = "hermit-abi"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1357,6 +1396,7 @@ dependencies = [
  "arbitrary",
  "crate-git-revision",
  "ethnum",
+ "hcnet-xdr 20.0.3 (git+https://github.com/HashCash-Consultants/rs-hcnet-xdr?rev=bc19f448db1bb6466b83976a89c0472587166582)",
  "num-derive",
  "num-traits",
  "num_enum",
@@ -1364,7 +1404,6 @@ dependencies = [
  "soroban-env-macros",
  "soroban-wasmi",
  "static_assertions",
- "stellar-xdr",
  "tracy-client",
 ]
 
@@ -1387,6 +1426,8 @@ dependencies = [
  "ed25519-dalek",
  "expect-test",
  "getrandom",
+ "hcnet-strkey",
+ "hcnet-xdr 20.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "hex",
  "hex-literal",
  "hmac",
@@ -1412,8 +1453,6 @@ dependencies = [
  "soroban-test-wasms",
  "soroban-wasmi",
  "static_assertions",
- "stellar-strkey",
- "stellar-xdr",
  "tabwriter",
  "textplots",
  "thousands",
@@ -1426,12 +1465,12 @@ dependencies = [
 name = "soroban-env-macros"
 version = "20.1.1"
 dependencies = [
+ "hcnet-xdr 20.0.3 (git+https://github.com/HashCash-Consultants/rs-hcnet-xdr?rev=bc19f448db1bb6466b83976a89c0472587166582)",
  "itertools",
  "proc-macro2",
  "quote",
  "serde",
  "serde_json",
- "stellar-xdr",
  "syn",
 ]
 
@@ -1466,7 +1505,7 @@ version = "20.1.1"
 [[package]]
 name = "soroban-wasmi"
 version = "0.31.1-soroban.20.0.1"
-source = "git+https://github.com/stellar/wasmi?rev=0ed3f3dee30dc41ebe21972399e0a73a41944aa0#0ed3f3dee30dc41ebe21972399e0a73a41944aa0"
+source = "git+https://github.com/HashCash-Consultants/wasmi?rev=2329ceae38c43c15607d71474d7be7776f428b3c#2329ceae38c43c15607d71474d7be7776f428b3c"
 dependencies = [
  "smallvec",
  "spin",
@@ -1496,33 +1535,6 @@ name = "static_assertions"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
-
-[[package]]
-name = "stellar-strkey"
-version = "0.0.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12d2bf45e114117ea91d820a846fd1afbe3ba7d717988fee094ce8227a3bf8bd"
-dependencies = [
- "base32",
- "crate-git-revision",
- "thiserror",
-]
-
-[[package]]
-name = "stellar-xdr"
-version = "20.0.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e9f00a85bd9b1617d4cb7e741733889c9940e6bdeca360db81752b0ef04fe3a5"
-dependencies = [
- "arbitrary",
- "base64 0.13.1",
- "crate-git-revision",
- "escape-bytes",
- "hex",
- "serde",
- "serde_with",
- "stellar-strkey",
-]
 
 [[package]]
 name = "strsim"
@@ -1848,12 +1860,12 @@ dependencies = [
 [[package]]
 name = "wasmi_arena"
 version = "0.4.0"
-source = "git+https://github.com/stellar/wasmi?rev=0ed3f3dee30dc41ebe21972399e0a73a41944aa0#0ed3f3dee30dc41ebe21972399e0a73a41944aa0"
+source = "git+https://github.com/HashCash-Consultants/wasmi?rev=2329ceae38c43c15607d71474d7be7776f428b3c#2329ceae38c43c15607d71474d7be7776f428b3c"
 
 [[package]]
 name = "wasmi_core"
 version = "0.13.0"
-source = "git+https://github.com/stellar/wasmi?rev=0ed3f3dee30dc41ebe21972399e0a73a41944aa0#0ed3f3dee30dc41ebe21972399e0a73a41944aa0"
+source = "git+https://github.com/HashCash-Consultants/wasmi?rev=2329ceae38c43c15607d71474d7be7776f428b3c#2329ceae38c43c15607d71474d7be7776f428b3c"
 dependencies = [
  "downcast-rs",
  "libm",

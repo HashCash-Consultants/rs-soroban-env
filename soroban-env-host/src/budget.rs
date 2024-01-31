@@ -587,7 +587,7 @@ impl Display for BudgetImpl {
 #[cfg(test)]
 impl BudgetImpl {
     // Utility function for printing default budget cost parameters in cpp format
-    // so that it can be ported into stellar-core.
+    // so that it can be ported into hcnet-core.
     // When needing it, copy and run the following test
     // ```
     // #[test]

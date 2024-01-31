@@ -27,7 +27,7 @@ mod metering_benchmark;
 mod num;
 mod post_mvp;
 mod prng;
-mod stellar_asset_contract;
+mod hcnet_asset_contract;
 mod storage;
 mod str;
 mod symbol;

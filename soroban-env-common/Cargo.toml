@@ -1,8 +1,8 @@
 [package]
 name = "soroban-env-common"
 description = "Soroban contract environment common types and functionality."
-homepage = "https://github.com/HashCash-Consultants/rs-soroban-env.git"
-repository = "https://github.com/HashCash-Consultants/rs-soroban-env.git"
+homepage = "https://github.com/HashCash-Consultants/rs-soroban-env"
+repository = "https://github.com/HashCash-Consultants/rs-soroban-env"
 authors = ["Hashcash"]
 license = "Apache-2.0"
 version.workspace = true

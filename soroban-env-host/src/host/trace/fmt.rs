@@ -47,7 +47,7 @@ impl From<&ContractExecutable> for ShortHashOrStaticStr {
     fn from(exec: &ContractExecutable) -> Self {
         match exec {
             ContractExecutable::Wasm(hash) => hash.into(),
-            ContractExecutable::StellarAsset => "SAC".into(),
+            ContractExecutable::HcnetAsset => "SAC".into(),
         }
     }
 }
@@ -125,7 +125,7 @@ impl<'a> TraceEvent<'a> {
                 },
                 &[],
             ),
-            Frame::StellarAssetContract(id, fn_name, args, _) => (
+            Frame::HcnetAssetContract(id, fn_name, args, _) => (
                 FrameId {
                     ty: "SAC",
                     id: id.into(),

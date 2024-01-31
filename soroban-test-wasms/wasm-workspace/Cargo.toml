@@ -72,5 +72,5 @@ soroban-env-host = { path = "../../soroban-env-host" }
 [patch."https://github.com/HashCash-Consultants/rs-soroban-sdk"]
 soroban-sdk = { path = "../../../rs-soroban-sdk/soroban-sdk" }
 
-# [patch."https://github.com/HashCash-Consultants/rs-stellar-xdr"]
-# stellar-xdr = { path = "../../../rs-stellar-xdr/" }
+# [patch."https://github.com/HashCash-Consultants/rs-hcnet-xdr"]
+# hcnet-xdr = { path = "../../../rs-hcnet-xdr/" }
