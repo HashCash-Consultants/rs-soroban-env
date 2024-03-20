@@ -67,9 +67,9 @@ nalgebra = { version = "=0.32.3", default-features = false, features = ["std"]}
 wasm-encoder = "=0.36.2"
 
 [dev-dependencies.hcnet-xdr]
-version = "=20.0.3"
+version = "=20.0.4"
 # git = "https://github.com/HashCash-Consultants/rs-hcnet-xdr"
-# rev = "a928e82943e4e93c887555fdec3b1e139ad810d2"
+# rev = "bb9eef6c2807f8504b983a8e1230a9c753bb6b14"
 default-features = false
 features = ["arbitrary"]
 
